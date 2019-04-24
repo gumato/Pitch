@@ -1,6 +1,9 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for,abort
 from . import main
-from flask_login import login_required
+from flask_login import login_required,current_user
+from ..models import User
+from import UpdateProfile
+from .. import db
 
 # views
 @main.route('/')
@@ -9,7 +12,8 @@ def index():
     View root page function that returns the index page and its data
     '''
     title = 'Home - Welcome to The best Pitch website Online '
-    return render_template('index.html',title = title )
+    categories = PitchCategory.get_categories
+    return render_template('index.html',title = title,categories = categories )
 
 
 @main.route('/Pitch/<int:pitch_id>')
@@ -17,8 +21,35 @@ def pitch(pitch_id):
     '''
     View pitch page function that returns the pitch details page and its data
     '''
+
+    registration_form
     return render_template('pitch.html',id = pitch_id)
 
-@main.route('/pitch/new/<int:id>', methods = ['GET','POST'])
+@main.route('/user/<uname>')
+def profile(uname):
+    user = User.query.filter_by(username = uname).first()
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user = user)
+
+
+@main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
-def new_pitch(id):
+def update_profile(uname):
+    user = User.query.filter_by(username = uname).first()
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
+
+    if form.validate_on_submit():
+        user.bio = form.bio.data
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('.profile',uname=user.username))
+
+    return render_template('profile/update.html',form =form)
