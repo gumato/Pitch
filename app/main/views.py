@@ -18,3 +18,7 @@ def pitch(pitch_id):
     View pitch page function that returns the pitch details page and its data
     '''
     return render_template('pitch.html',id = pitch_id)
+
+@main.route('/pitch/new/<int:id>', methods = ['GET','POST'])
+@login_required
+def new_pitch(id):
