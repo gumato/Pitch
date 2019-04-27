@@ -6,23 +6,23 @@ Pricilla Gumato
 # DESCRIPTION
 This is an app that allows users to create pitches based on categories
 ### Pitch Categories
-technology pitch
-business pitch
-promotion pitch
-interview pitch
-product pitch
+-technology pitch
+-business pitch
+-promotion pitch
+-interview pitch
+-product pitch
 ### User Stories
-A users can see pitches that other people have post
-A user can comment on different pitches and leave feedback
-A user can submit a pitch in any category
-A user can submit to different categories
+-A users can see pitches that other people have post
+-A user can comment on different pitches and leave feedback
+-A user can submit a pitch in any category
+-A user can submit to different categories
 
 
 #Technologies Used
 This project uses major technologies which are :
-Bootstrap
-Python3.6
-flask
+-Bootstrap
+-Python3.6
+-flask
 ## Support and Contacts
 In case You have any issues using this code please do no hesitate to get in touch with me through gumatopricilla22@gmail.com or leave a commit here on github.
 
