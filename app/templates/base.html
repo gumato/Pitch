@@ -1,25 +1,14 @@
-{% extends 'bootstrap/base.html' %}
+{% extends 'bootstrap/base.html'%}
 
-<!DOCTYPE html>
-<html>
+<!-- Navbar block  -->
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Home- Welcome to the Pitch Website</title>
-    {% endif %}
-  </head>
+{%block styles %}
+{{super()}}
+<!--Importing the simple mde css and js files  -->
+{{ simplemde.css}}
+{{ simplemde.js }}
 
-  <body>
-    <!-- Content Block -->
-    {% block content %} {% endblock %}
-
-    <!-- Navbar block  -->
-    {% block navbar %} {% include 'navbar.html' %} {% endblock %}
-
-  </body>
-
-</html>
+{% endblock %}

@@ -8,7 +8,7 @@ class CommentsForm(FlaskForm):
     submit = SubmitField('SUBMIT')
 
 class PitchForm(FlaskForm):
-    category_id = SelectField('Select Category', choices=[('1', 'Technology Pitch'), ('2', 'Business Pitch'), ('3', 'Promotion Pitch'),('4','Interview Pitch'),('5','Production Pitch')])
+    category_id = SelectField('Select Category', choices=[('1', 'Technology Pitch'), ('2', 'Business Pitch'), ('3', 'Promotion Pitch'),('4','Interview Pitch'),('5','Product Pitch')])
     content = TextAreaField('YOUR PITCH')
     submit = SubmitField('Create Pitch')
 
