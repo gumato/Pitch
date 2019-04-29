@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container" style="background-color:red; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
+    <div class="container" style="background-color:blue; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:300px;">
         <div class="row" style="text-align:center; font-size:30px;">
-            <span style="font-size:40px; font-family: 'Akronim', cursive;">oNe mINute PiTch</span>
+            <span style="font-size:40px; font-family: 'Akronim', cursive;">A Minute Pitch</span>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                     <a href="{{url_for('main.technology')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
@@ -40,7 +40,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
             <div class="panel style="style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
-                <p style="font-family: 'Bellefair', serif; font-size:20px;">Write your one minute in any of the categories</p>
+                <p style="font-family: 'Bellefair', serif; font-size:20px;">Write your one minute pitch in any of the categories</p>
 
                 <div style="text-align:center;">
                     <a href="{{url_for('main.new_pitch')}}">
@@ -55,7 +55,7 @@
         </div>
     </hr>
         <div class="all-pitches">
-            <span style="color:gainsboro;">All pitches are displayed below</span>
+            <span style="color:gainsboro;">All pitches are displayed </span>
                 <hr>
                 {{macro.displayPitches(pitches)}}
 

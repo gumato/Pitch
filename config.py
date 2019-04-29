@@ -1,8 +1,14 @@
 import os
 
 class Config:
-    SECRET_KEY = os.environ.get("SECRET_KEY")
+    '''
+    General configuration parent class
+    '''
+    SECRET_KEY = 'gumeshi1'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://pricilla:1234@localhost/pitch'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
+
+    # email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -11,14 +17,29 @@ class Config:
     SUBJECT_PREFIX = 'One Minute Pitch'
     SENDER_EMAIL = 'gumatopricilla22@gmail.com'
 
+    # simple mde  configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
+
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://pricilla:gumatopricilla22@gmail.com@localhost/pitch_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://pricilla:1234@localhost/pitch_test'
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    '''
+    Production  configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    pass
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://pricilla:71538564122@localhost/pitch'
+    '''
+    Development  configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://pricilla:1234@localhost/pitch'
 
 
     DEBUG = True

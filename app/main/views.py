@@ -19,7 +19,7 @@ def index():
     search_pitch = request.args.get('pitch_query')
     pitches= Pitch.get_all_pitches()
 
-    return render_template('index.html', title = title, pitches= pitches)
+    return render_template('index.html', title = title, search_pitch = search_pitch)
 
 #this section consist of the category root functions
 
@@ -29,7 +29,7 @@ def technology():
     View root page function that returns the index page and its data
     '''
     title = 'Technology Pitches'
-    return render_template('technology.html', title = title, pitches= pitches )
+    return render_template('technology.html', title = title )
 
 @main.route('/business/pitches/')
 def business():
